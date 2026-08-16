@@ -9,12 +9,12 @@ Public infrastructure and tools for Gnoland Sapphire testnet operators by [Apoll
 
 | # | Service | Endpoint | Status |
 |---|---------|----------|--------|
-| 1 | Public RPC | [rpc.apollo-validator.eu/gnoland/](https://rpc.apollo-validator.eu/gnoland/) | 🟢 Active |
-| 2 | Snapshots | [snapshots.apollo-validator.eu/gnoland/](https://snapshots.apollo-validator.eu/gnoland/) | 🟢 Active |
-| 3 | State Sync Guide | [statesync.md](statesync.md) | 🟢 Active |
-| 4 | Peers List | [peers.md](peers.md) (auto-updated every 6h) | 🟢 Active |
-| 5 | Validator Guide | [guide.md](guide.md) | 🟢 Active |
-| 6 | Monitor Bot | [@gnoland_monitor_apollo_bot](https://t.me/gnoland_monitor_apollo_bot) | 🟢 Active |
+| 1 | [Public RPC](#public-rpc) | [rpc.apollo-validator.eu/gnoland/](https://rpc.apollo-validator.eu/gnoland/) | 🟢 Active |
+| 2 | [Snapshots](#snapshots) | [snapshots.apollo-validator.eu/gnoland/](https://snapshots.apollo-validator.eu/gnoland/) | 🟢 Active |
+| 3 | [State Sync Guide](#state-sync-guide) | [statesync.md](statesync.md) | 🟢 Active |
+| 4 | [Peers List](#peers-list) | [peers.md](peers.md) (auto-updated every 6h) | 🟢 Active |
+| 5 | [Validator Guide](#validator-guide) | [guide.md](guide.md) | 🟢 Active |
+| 6 | [Monitor Bot](#validator-monitor-bot) | [@gnoland_monitor_apollo_bot](https://t.me/gnoland_monitor_apollo_bot) | 🟢 Active |
 
 ---
 
@@ -30,7 +30,10 @@ Snapshots are created every 6 hours and stored for fast node synchronization. On
 |-------|-------|
 | Network | Gnoland Sapphire |
 | Chain ID | sapphire-1 |
-| Format | lz4 compressed (.tar.lz4) |
+| Height | 203,978 |
+| Size | 3.4G (lz4 compressed) |
+| Created | 2026-08-16T13:00:00Z |
+| Format | .tar.lz4 |
 | Updated | Every 6 hours via cron |
 
 ### Download Latest
@@ -77,6 +80,17 @@ rm -v gnoland-snapshot.tar.lz4
 ```bash
 curl -s https://snapshots.apollo-validator.eu/api/gnoland/snapshots/latest | jq
 ```
+
+---
+
+## State Sync Guide
+
+Full state sync documentation: [statesync.md](statesync.md)
+
+Two methods for fast synchronization:
+
+1. **Snapshot restore (recommended)** — download compressed snapshot, extract, resume from saved height
+2. **Genesis sync** — start from block 0, wait for chain to sync (slower)
 
 ---
 
