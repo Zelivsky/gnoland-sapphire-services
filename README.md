@@ -26,15 +26,10 @@ Snapshots are created every 6 hours and stored for fast node synchronization. On
 
 ### Latest Snapshot
 
-| Field | Value |
-|-------|-------|
-| Network | Gnoland Sapphire |
-| Chain ID | sapphire-1 |
-| Height | 203,978 |
-| Size | 3.4G (lz4 compressed) |
-| Created | 2026-08-16T13:00:00Z |
-| Format | .tar.lz4 |
-| Updated | Every 6 hours via cron |
+See the live snapshot page for the most up-to-date information:
+https://snapshots.apollo-validator.eu/gnoland/
+
+Snapshots are created every 6 hours and stored for fast node synchronization. Only the latest 2 snapshots are kept.
 
 ### Download Latest
 
